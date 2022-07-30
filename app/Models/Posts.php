@@ -23,4 +23,13 @@ class Posts extends Model
         'created_at', 
         'updated_at'
     ];
+
+
+    public function scopeFilter($query, array $filters){
+        if ($filters['search'] ?? false){
+            $query->where('title', 'like', '%'.request('search').'%')
+                  ->orWhere('location', 'like', '%'.request('search').'%')
+                  ->orWhere('price_for_day', 'like', '%'.request('search').'%');
+        }
+    }
 }

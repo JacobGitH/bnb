@@ -1,0 +1,8 @@
+footer{
+    height:70px;
+    clear:both;
+    position:relative;
+    bottom:0;
+    width: 100%;
+    background-color: rgb(52, 63, 63);
+}

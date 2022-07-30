@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Common Resource Routes:
+// index - Show all listings
+// show - Show single listing
+// create - Show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing
+// update - Update listing
+// destroy - Delete listing 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//shows all Posts
+Route::get('/', [PostsController::class, 'index']);
