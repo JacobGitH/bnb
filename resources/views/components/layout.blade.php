@@ -55,7 +55,7 @@
               </ul>
               <form class="d-flex"action="/">
                 <input class="form-control me-2" type="text" placeholder="Search" name="search">
-                <button class="btn btn-success" style="background-color: #0096FF;" type="submit">Search</button>
+                <button class="btn btn-success" type="submit">Search</button>
               </form>
             </div>
           </div>

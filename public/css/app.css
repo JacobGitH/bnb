@@ -35,6 +35,16 @@ nav{
     text-decoration: none;
 }
 
+.btn{
+    background-color: #0096FF !important;
+    border: #0096FF !important;
+}
+
+.btn:hover{
+    background-color: #43b0ff !important;
+    border: #43b0ff !important;
+}
+
 
 
 footer{
@@ -83,6 +93,23 @@ footer{
     grid-column: 2/4;
     grid-row: 4;
     background-color: green;
+}
+
+/*register*/
+.register-form{
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right:25%;
+    width: 40%;
+    padding: 35px;
+    border: 2px solid rgb(185, 176, 176);
+    border-radius: 12px;
+}
+
+.error-message{
+    margin-top: 5px;
+    color: red;
+    font-size: 6px;
 }
 
 
