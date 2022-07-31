@@ -16,6 +16,17 @@
        <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">BrnoBnb</a>
+          <div class="login">
+            @auth
+            <form action="/logout" method="POST">
+              @csrf
+              <p class="logout-a><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</p>
+            </form>
+            @else
+              <a href="/login" class="login-a"><i class="fa-solid fa-arrow-right-to-bracket"></i>Log in</a>
+              <a href="/register" class="register-a"><i class="fa-solid fa-user-pen"></i></i>Register</a>
+            @endauth
+          </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon" ></span>
           </button>
@@ -32,6 +43,15 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Link</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>            
               </ul>
               <form class="d-flex"action="/">
                 <input class="form-control me-2" type="text" placeholder="Search" name="search">

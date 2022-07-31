@@ -22,5 +22,14 @@ use App\Http\Controllers\PostsController;
 // update - Update listing
 // destroy - Delete listing 
 
+//Posts
 //shows all Posts
 Route::get('/', [PostsController::class, 'index']);
+
+Route::get('/post/{posts}', [PostsController::class, 'show']);
+
+
+//Users
+
+
+

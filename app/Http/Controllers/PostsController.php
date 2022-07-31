@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function index(){
-        return view('posts.index');
+    public function index(Posts $posts){
+        return view('posts.index', ['posts' => $posts->latest('id')->get()]);
+    }
+
+    public function show(Posts $posts){
+        return view('posts.show', ['posts' => $posts]);
     }
 }

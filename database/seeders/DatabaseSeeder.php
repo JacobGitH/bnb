@@ -18,9 +18,13 @@ class DatabaseSeeder extends Seeder
     {
          User::factory(10)->create();
 
+    
 
+
+         for ($i=0; $i < 10; $i++) { 
+ 
         Posts::create([
-            'title' => 'malý byt',
+            'title' => 'malý byt'.$i,
             'location' => 'Brno',
             'description' => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
             'contact' => '777777774547',
@@ -33,6 +37,11 @@ class DatabaseSeeder extends Seeder
             'images_id' => '5'
 
         ]);
+    }
+
+
+
+
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
