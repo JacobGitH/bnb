@@ -25,7 +25,12 @@
             @else
               <a href="/login" class="login-a"><i class="fa-solid fa-arrow-right-to-bracket"></i>Log in</a>
               <a href="/register" class="register-a"><i class="fa-solid fa-user-pen"></i></i>Register</a>
+              
             @endauth
+
+            @admin
+            <a href="/register" class="register-a"><i class="fa-solid fa-user-pen"></i></i>TEST</a>
+            @endadmin
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon" ></span>

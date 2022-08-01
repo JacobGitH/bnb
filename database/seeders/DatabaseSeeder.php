@@ -37,7 +37,17 @@ class DatabaseSeeder extends Seeder
             'images_id' => '5'
 
         ]);
+
+       
     }
+
+    User::create([
+        'name' => 'jogn',
+        'email' => 'crack@crack.com',
+        "password" => '$2y$10$ux73CDoTMnUBgwyR53kbTOJBdfMBNHWfSG/lQfhvIrAZmulFHtBFq',
+        'user_type' => 1,
+
+    ]);
 
 
 
