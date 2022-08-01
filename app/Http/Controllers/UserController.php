@@ -27,9 +27,9 @@ class UserController extends Controller
 
         $form['password'] = bcrypt($form['password']);
         $form['user_type'] = '0';
-        
-        $user = User::create($form);
 
+        $user = User::create($form);
+        auth()->login($user);
         return redirect('/')->with('message', 'you are loged');
     }
 
@@ -39,7 +39,7 @@ class UserController extends Controller
             'password' => 'required'
         ]); 
 
-        if(auth()->attempt('$form')){
+        if(auth()->attempt($form)){
             $request->session()->regenerate();
             return redirect('/')->with('message', 'you are loged in');
         }
@@ -48,5 +48,15 @@ class UserController extends Controller
 
     }
 
+    public function logout(Request $request){
+        //removes authentification from session
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+
+    }
 
 }

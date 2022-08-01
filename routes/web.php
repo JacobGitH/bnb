@@ -43,4 +43,6 @@ Route::get('/login', [UserController::class, 'login']);
 //logs in user
 Route::post('/login/user', [UserController::class, 'authenticate']);
 
+Route::post('/logout', [UserController::class, 'logout']);
+
 

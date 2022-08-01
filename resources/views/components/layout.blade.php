@@ -20,7 +20,7 @@
             @auth
             <form action="/logout" method="POST">
               @csrf
-              <p class="logout-a><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</p>
+              <button class="logout-a nav-link" type='submit'><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</button>
             </form>
             @else
               <a href="/login" class="login-a"><i class="fa-solid fa-arrow-right-to-bracket"></i>Log in</a>

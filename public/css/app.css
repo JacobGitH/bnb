@@ -28,11 +28,18 @@ nav{
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
-
 .logout-a{
-    margin-left: 30px; 
     color: rgb(255, 255, 255);
-    text-decoration: none;
+    text-decoration: none; 
+    background-color: transparent;
+    border: none;
+}
+.login > a:hover {
+    color: #0096FF;
+}
+
+.logout-a:hover{
+    color: #0096FF;
 }
 
 .btn{
