@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container">
-    <form class="register-form" method="POST" action="/user/register">
+    <form class="register-form" method="POST" action="/register/user">
         @csrf
         <div class="mb-3">
           <label class="form-label">Email address</label>
@@ -11,11 +11,11 @@
         </div>
         <div class="mb-3">
           <label class="form-label">Password</label>
-          <input type="password" class="form-control" >
+          <input type="password" class="form-control" name="password">
         </div>
         <div class="mb-3">
             <label class="form-label">Password confirmation</label>
-            <input type="password_confirmation" class="form-control" >
+            <input type="password_confirmation" class="form-control" name="password_confirmation">
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
       </form>

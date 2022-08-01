@@ -25,7 +25,7 @@ use App\Http\Controllers\PostsController;
 
 //Posts
 //shows all Posts
-Route::get('/', [PostsController::class, 'index']);
+Route::get('/', [PostsController::class, 'index'])->name('home');
 
 Route::get('/post/{posts}', [PostsController::class, 'show']);
 
@@ -34,10 +34,13 @@ Route::get('/post/{posts}', [PostsController::class, 'show']);
 //shows register page
 Route::get('/register', [UserController::class, 'register']);
 
-Route::post('/user/register', [UserController::class], 'store');
+//stores users data
+Route::post('/register/user', [UserController::class], 'store');
 
 //shows login page
 Route::get('/login', [UserController::class, 'login']);
 
+//logs in user
+Route::get('/login/user', [UserController::class, 'authenticate']);
 
 

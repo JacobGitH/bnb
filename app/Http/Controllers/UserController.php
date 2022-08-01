@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     //shows register form
+    //authentigfication 
     public function register(){
         return view('users.register');
     }
@@ -15,6 +16,13 @@ class UserController extends Controller
     //shows login form
     public function login(){
         return view('users.login');
+    }
+
+    public function store(Request $request){
+        $form = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
     }
 
 
