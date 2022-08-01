@@ -35,12 +35,12 @@ Route::get('/post/{posts}', [PostsController::class, 'show']);
 Route::get('/register', [UserController::class, 'register']);
 
 //stores users data
-Route::post('/register/user', [UserController::class], 'store');
+Route::post('/register/user', [UserController::class, 'store']);
 
 //shows login page
 Route::get('/login', [UserController::class, 'login']);
 
 //logs in user
-Route::get('/login/user', [UserController::class, 'authenticate']);
+Route::post('/login/user', [UserController::class, 'authenticate']);
 
 

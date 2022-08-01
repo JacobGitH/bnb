@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Password confirmation</label>
-            <input type="password_confirmation" class="form-control" name="password_confirmation">
+            <input type="password" class="form-control" name="password_confirmation">
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
       </form>
