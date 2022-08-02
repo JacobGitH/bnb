@@ -45,7 +45,7 @@ class PostsController extends Controller
                $imageModel->save();
             } 
         }
-        
+
         return redirect('/');
         
 

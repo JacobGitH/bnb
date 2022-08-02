@@ -15,7 +15,7 @@
 <body>
        <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">BrnoBnb</a>
+          <a class="navbar-brand" href="/">BrnoBnb</a>
           <div class="login">
             @auth
             <form action="/logout" method="POST">
@@ -32,23 +32,23 @@
           </button>
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">BrnoBnb</h5>
+              <h5 class="offcanvas-title"><a href="/" class="a-cus">BrnoBnb</a></h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  <a class="nav-link active a-cus" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link a-cus" href="#">Link</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link a-cus" href="#">Link</a>
                 </li>
                 @auth
                 <li class="nav-item">
-                  <a class="nav-link" href="/post/create">Create post</a>
+                  <a class="nav-link a-cus" href="/post/create">Create post</a>
                 </li>
                 @endauth
               </ul>
@@ -63,9 +63,10 @@
 
     {{$slot}}
 
-
+      
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Posts;
 use App\Models\Images;
+use App\Models\Comments;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -48,6 +49,11 @@ class DatabaseSeeder extends Seeder
     Images::create([
         'path' => 'whatev',
         'post_id' => 3,
+    ]);
+
+    Comments::create([
+        'comment' => 'whatev',
+        'user_id' => 3,
     ]);
 
 
