@@ -30,8 +30,13 @@ Route::get('/', [PostsController::class, 'index'])->name('home');
 //shows form to create a post 
 Route::get('/post/create', [PostsController::class, 'create']);
 
+//stores form data
+Route::post('/post/store', [PostsController::class, 'store']);
+
 //shows single listing 
 Route::get('/post/{posts}', [PostsController::class, 'show']);
+
+
 
 
 

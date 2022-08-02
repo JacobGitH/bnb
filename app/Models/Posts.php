@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Posts extends Model
 {
@@ -16,10 +16,6 @@ class Posts extends Model
         'price_for_day',
         'price_for_servis',
         'rules',
-        'comments_id',
-        'reservation_id',
-        'rating_id',
-        'images_id', 
         'created_at', 
         'updated_at'
     ];
@@ -31,5 +27,9 @@ class Posts extends Model
                   ->orWhere('location', 'like', '%'.request('search').'%')
                   ->orWhere('price_for_day', 'like', '%'.request('search').'%');
         }
+    }
+
+    public function images(){
+        return $this->hasMany(Images::class, 'post_id');
     }
 }

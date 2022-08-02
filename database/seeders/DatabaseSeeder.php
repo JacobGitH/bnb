@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
 use App\Models\Posts;
+use App\Models\Images;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -31,11 +32,6 @@ class DatabaseSeeder extends Seeder
             'price_for_day' => '150',
             'price_for_servis' => '120',
             'rules' => 'nebud kokot',
-            'comments_id' => '15',
-            'reservation_id' => '21',
-            'rating_id' => '3',
-            'images_id' => '5'
-
         ]);
 
        
@@ -47,6 +43,11 @@ class DatabaseSeeder extends Seeder
         "password" => '$2y$10$ux73CDoTMnUBgwyR53kbTOJBdfMBNHWfSG/lQfhvIrAZmulFHtBFq',
         'user_type' => 1,
 
+    ]);
+
+    Images::create([
+        'path' => 'whatev',
+        'post_id' => 3,
     ]);
 
 

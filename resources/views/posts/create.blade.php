@@ -1,33 +1,37 @@
 <x-layout>
-    <form class="post-create-form" method="POST" action="/post/store">
+    <form class="post-create-form" enctype="multipart/form-data" method="POST"  action="/post/store" >
+      @csrf
         <div class="form-group">
           <label>Post name</label>
-          <input type="text" class="form-control" placeholder="Enter post name">
+          <input type="text" class="form-control" placeholder="Enter post name" name="title">
         </div>
         <div class="form-group">
           <label>location</label>
-          <input type="text" class="form-control" placeholder="location">
+          <input type="text" class="form-control" placeholder="location" name="location">
         </div>
         <div class="form-group">
             <label>Conctact</label>
-            <input type="text" class="form-control" placeholder="+420 xxx xxx xxx">
+            <input type="text" class="form-control" placeholder="+420 xxx xxx xxx" name="contact">
         </div>
         <div class="form-group">
             <label>Price for night</label>
-            <input type="text" class="form-control" placeholder="price for one day">
+            <input type="text" class="form-control" placeholder="price for one day" name="price_for_day">
         </div>
         <div class="form-group">
             <label>price for servis</label>
-            <input type="text" class="form-control" placeholder="price for servis/utilities">
+            <input type="text" class="form-control" placeholder="price for servis/utilities" name="price_for_servis">
         </div>
         <div class="form-group">
             <label>rules</label>
-            <input type="text" class="form-control" placeholder="rules">
+            <input type="text" class="form-control" placeholder="rules" name="rules">
         </div>
         <div class="form-group">
           <label >Description</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-mar">Submit</button>
+        <div class="form-group">
+          <input class="form-control form-m" type="file" name="images[]" multiple>
+        </div>
+        <button type="submit" class="btn btn-primary form-m">Submit</button>
       </form>
 </x-layout>
