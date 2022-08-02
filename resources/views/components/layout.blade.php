@@ -25,12 +25,7 @@
             @else
               <a href="/login" class="login-a"><i class="fa-solid fa-arrow-right-to-bracket"></i>Log in</a>
               <a href="/register" class="register-a"><i class="fa-solid fa-user-pen"></i></i>Register</a>
-              
             @endauth
-
-            @admin
-            <a href="/register" class="register-a"><i class="fa-solid fa-user-pen"></i></i>TEST</a>
-            @endadmin
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon" ></span>
@@ -51,12 +46,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Link</a>
                 </li>
+                @auth
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link" href="/post/create">Create post</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>            
+                @endauth
               </ul>
               <form class="d-flex"action="/">
                 <input class="form-control me-2" type="text" placeholder="Search" name="search">

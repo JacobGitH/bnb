@@ -33,6 +33,7 @@ nav{
     text-decoration: none; 
     background-color: transparent;
     border: none;
+    margin-left: 30px;
 }
 .login > a:hover {
     color: #0096FF;
@@ -52,6 +53,9 @@ nav{
     border: #43b0ff !important;
 }
 
+.btn-mar{
+    margin-top: 15px;
+}
 
 
 footer{
@@ -121,9 +125,20 @@ footer{
 
 
 
+.post-create-form{
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right:25%;
+    width: 40%;
+    padding: 35px;
+    border: 2px solid rgb(185, 176, 176);
+    border-radius: 12px;
+}
 
-
-
+.post-create-form > div > label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
 
 
 
@@ -140,19 +155,17 @@ footer{
 
 /*::-webkit-scrollbar*/
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px rgb(59, 49, 60); 
-    border-radius: 10px;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: rgb(28, 28, 32); 
-    border-radius: 10px;
   }
   
   /* Handle on hover */

@@ -27,7 +27,13 @@ use App\Http\Controllers\PostsController;
 //shows all Posts
 Route::get('/', [PostsController::class, 'index'])->name('home');
 
+//shows form to create a post 
+Route::get('/post/create', [PostsController::class, 'create']);
+
+//shows single listing 
 Route::get('/post/{posts}', [PostsController::class, 'show']);
+
+
 
 
 //Users
@@ -43,6 +49,7 @@ Route::get('/login', [UserController::class, 'login']);
 //logs in user
 Route::post('/login/user', [UserController::class, 'authenticate']);
 
+//logout
 Route::post('/logout', [UserController::class, 'logout']);
 
 
