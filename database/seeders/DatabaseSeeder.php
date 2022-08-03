@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Posts;
 use App\Models\Images;
+use App\Models\Bookings;
 use App\Models\Comments;
 use Illuminate\Database\Seeder;
 
@@ -55,24 +56,35 @@ class DatabaseSeeder extends Seeder
         'comment' => 'whatev',
         'post_id' => 3,
         'user_name' => 'john',
+        'user_id' => '2',
     ]);
     
     Comments::create([
         'comment' => 'whatever',
         'post_id' => 3,
         'user_name' => 'john',
+        'user_id' => '2',
     ]);
 
     Comments::create([
         'comment' => 'whatevdwadawer',
         'post_id' => 3,
         'user_name' => 'lex',
+        'user_id' => '2',
     ]);
 
     Comments::create([
         'comment' => 'dicks',
         'post_id' => 5,
         'user_name' => 'john',
+        'user_id' => '2',
+    ]);
+
+
+    Bookings::create([
+        'post_id' => 3,
+        'user_id' => 12,
+        'booked' => '2001-10-11',
     ]);
 
 

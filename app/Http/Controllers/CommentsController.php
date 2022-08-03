@@ -8,14 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
+
+    //stores comments 
     public function store(Request $request){
         if(!Auth::check()){
-            return redirect("/dick");
+            return redirect("/");
         }
-        //dd($request);
+
         $form = $request->validate([
             'user_name' => 'required',
             'post_id' => 'required',
+            'user_id' => 'required',
             'comment' => 'required',
         ]);
 

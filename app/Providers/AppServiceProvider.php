@@ -40,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('endadmin', function () {
             return "<?php } ?>";
         });
+
     
     }
 }

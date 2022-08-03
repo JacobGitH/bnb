@@ -10,19 +10,23 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
+    //shows home page
     public function index(Posts $posts){
     return view('posts.index', ['posts' => $posts->latest('id')->get()]);
     }
 
+    //shows single post listing with comments
     public function show(Posts $posts){
         $comments = Comments::where('post_id', $posts->id)->get();
         return view('posts.show', ['post' => $posts, 'comments' => $comments]);
     }
 
+    //shows post form 
     public function create(){
         return view('posts.create');
     }
 
+    //stores post
     public function store(Request $request){
         $form = $request->validate([
             'title' => 'required',
@@ -39,17 +43,21 @@ class PostsController extends Controller
         //checks if request has files and then stores them in public 
         //images are linked through post_id
         if($request->hasFile('images')){
+            //goes through all images in array
             foreach($request->file('images') as $image){
-               $imageModel = new Images;
-               $path = $image->store('postImages', 'public');
-               $imageModel->path = $path;
-               $imageModel->post_id = $postForID->id;
-               $imageModel->save();
+                //stores images path in storage into variable and saves post id into var
+                $path = $image->store('postImages', 'public');
+                $post_id = $postForID->id;
+
+                Images::create([
+                    'path' => $path,
+                    'post_id' => $post_id,
+                ]);
             } 
         }
 
         return redirect('/');
-        
-
     }
+
+    
 }

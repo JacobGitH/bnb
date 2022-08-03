@@ -9,7 +9,6 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     //shows register form
-    //authentigfication 
     public function register(){
         return view('users.register');
     }
@@ -19,6 +18,7 @@ class UserController extends Controller
         return view('users.login');
     }
 
+    //stores user data from register 
     public function store(Request $request){
         $form = $request->validate([
             'name' => ['required', 'min:3'],
@@ -34,6 +34,7 @@ class UserController extends Controller
         return redirect('/')->with('message', 'you are loged');
     }
 
+    //validates data from login form
     public function authenticate(Request $request){
         $form = $request->validate([
             'email' => 'required|email',
@@ -46,9 +47,9 @@ class UserController extends Controller
         }
 
         return back()->withErrrors(['email' => 'invalid'])->onlyInput('email');
-
     }
 
+    //logouts user
     public function logout(Request $request){
         //removes authentification from session
         auth()->logout();
@@ -57,7 +58,7 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
-
     }
+
 
 }

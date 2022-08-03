@@ -10,7 +10,7 @@ class Comments extends Model
     use HasFactory;
     protected $table = 'comments';
 
-    protected $fillable = ['user_name', 'post_id', 'comment'];
+    protected $fillable = ['user_name', 'user_id', 'post_id', 'comment'];
 
     public function post(){
         return $this->belongsTo(Posts::class, 'post_id');

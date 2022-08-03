@@ -29,35 +29,40 @@ use App\Http\Controllers\CommentsController;
 Route::get('/', [PostsController::class, 'index'])->name('home');
 
 //shows form to create a post 
-Route::get('/post/create', [PostsController::class, 'create']);
+Route::get('/post/create', [PostsController::class, 'create'])->middleware('auth');
 
 //stores form data
-Route::post('/post/store', [PostsController::class, 'store']);
+Route::post('/post/store', [PostsController::class, 'store'])->middleware('auth');
 
 //shows single listing 
 Route::get('/post/{posts}', [PostsController::class, 'show']);
 
 //Comments
 //stores comment
-Route::post('/comments/store', [CommentsController::class, 'store']);
+Route::post('/comments/store', [CommentsController::class, 'store'])->middleware('auth');
 
 
 
 
 //Users
 //shows register page
-Route::get('/register', [UserController::class, 'register']);
+Route::get('/register', [UserController::class, 'register'])->middleware('guest');
 
 //stores users data
-Route::post('/register/user', [UserController::class, 'store']);
+Route::post('/register/user', [UserController::class, 'store'])->middleware('guest');
 
 //shows login page
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->middleware('guest');
 
 //logs in user
-Route::post('/login/user', [UserController::class, 'authenticate']);
+Route::post('/login/user', [UserController::class, 'authenticate'])->middleware('guest');
 
 //logout
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
+
+
+//fallback
+//for now just commented
+// Route::fallback(FallbackController::class)
 
