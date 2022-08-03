@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,9 @@ Route::post('/post/store', [PostsController::class, 'store']);
 //shows single listing 
 Route::get('/post/{posts}', [PostsController::class, 'show']);
 
-
+//Comments
+//stores comment
+Route::post('/comments/store', [CommentsController::class, 'store']);
 
 
 

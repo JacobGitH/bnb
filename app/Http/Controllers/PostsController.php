@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Posts;
 use App\Models\Images;
+use App\Models\Comments;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
     public function index(Posts $posts){
-        return view('posts.index', ['posts' => $posts->latest('id')->get()]);
+    return view('posts.index', ['posts' => $posts->latest('id')->get()]);
     }
 
     public function show(Posts $posts){
-        return view('posts.show', ['posts' => $posts]);
+        $comments = Comments::where('post_id', $posts->id)->get();
+        return view('posts.show', ['post' => $posts, 'comments' => $comments]);
     }
 
     public function create(){

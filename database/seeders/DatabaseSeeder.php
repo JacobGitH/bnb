@@ -53,8 +53,28 @@ class DatabaseSeeder extends Seeder
 
     Comments::create([
         'comment' => 'whatev',
-        'user_id' => 3,
+        'post_id' => 3,
+        'user_name' => 'john',
     ]);
+    
+    Comments::create([
+        'comment' => 'whatever',
+        'post_id' => 3,
+        'user_name' => 'john',
+    ]);
+
+    Comments::create([
+        'comment' => 'whatevdwadawer',
+        'post_id' => 3,
+        'user_name' => 'lex',
+    ]);
+
+    Comments::create([
+        'comment' => 'dicks',
+        'post_id' => 5,
+        'user_name' => 'john',
+    ]);
+
 
 
 

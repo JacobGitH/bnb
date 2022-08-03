@@ -127,6 +127,15 @@ footer{
     border-radius: 12px;
 }
 
+.form-def{
+    margin-top: 50px;
+    margin-right:25%;
+    width: 80%;
+    padding: 35px;
+    border: 2px solid rgb(185, 176, 176);
+    border-radius: 12px;
+}
+
 .error-message{
     margin-top: 5px;
     color: red;
@@ -192,6 +201,7 @@ footer{
 
 
 
+
 /*::-webkit-scrollbar*/
 ::-webkit-scrollbar {
     width: 12px;
@@ -210,4 +220,9 @@ footer{
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(28, 28, 32); 
+  }
+
+  .spacer{
+    width: 100%;
+    height: 150px;
   }

@@ -3,6 +3,13 @@
     <form class="register-form" method="POST" action="/register/user">
         @csrf
         <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" name="name">
+          @error('email')
+              <p class="error-message">{{$message}}</p>
+          @enderror
+        </div>
+        <div class="mb-3">
           <label class="form-label">Email address</label>
           <input type="email" class="form-control" name="email">
           @error('email')
