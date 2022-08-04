@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\CommentsController;
 
 /*
@@ -40,6 +41,10 @@ Route::get('/post/{posts}', [PostsController::class, 'show']);
 //Comments
 //stores comment
 Route::post('/comments/store', [CommentsController::class, 'store'])->middleware('auth');
+
+//booking
+//stores booking
+Route::post('/booking/store', [BookingsController::class, 'store']);
 
 
 

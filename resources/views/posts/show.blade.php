@@ -12,24 +12,27 @@
     <div class="container">
         @auth
             
-        
-        <form class="booking">
+        <form class="booking" method="POST" action="/booking/store">
+            @csrf
+                <input type="hidden"  name="user_id" value="{{auth()->user()->id}}">
+                <input type="hidden"  name="post_id" value="{{$post->id}}">
                 <div class="form-group">
                     <label class="form-label">booked from</label>
-                    <input type="date" id="todayInput" value="" class="form-control form-input-width">
+                    <input type="date" id="todayInput" value="" class="form-control form-input-width" name="booked_at">
                 </div>
                 <div class="form-group">
                     <label class="form-label">booked from</label>
-                    <input type="date" id="inWeekInput" value="" class="form-control form-input-width">
+                    <input type="date" id="inWeekInput" value="" class="form-control form-input-width" name="booked_to">
                 </div>
-
             <button type="submit" class="btn btn-primary btn-mar date-flex" name="submit">Submit</button>
-        </form>
+            </form>
+
         @else
         <div>
             To book a date you need to be <a href="/login">signed in</a>
         </div>
         @endauth
+
     </div>
 
     

@@ -4,6 +4,7 @@
 let today = new Date().toISOString().slice(0, 10);
 document.getElementById("todayInput").value = today;
 
-let tomorrow = new Date();
-tomorrow.setDate(tomorrow.getDate() + 7).toISOString().slice(0,10);
-document.getElementById("inWeekInput").value = tomorrow;
+let d = new Date();
+let sevenDaysFromNow = d.setDate(d.getDate() + 7);
+sevenDaysFromNow = new Date(sevenDaysFromNow).toISOString().slice(0, 10);
+document.getElementById("inWeekInput").value = sevenDaysFromNow;
