@@ -12,7 +12,7 @@ class PostsController extends Controller
 {
     //shows home page
     public function index(Posts $posts){
-    return view('posts.index', ['posts' => $posts->latest('id')->get()]);
+    return view('posts.index', ['posts' => $posts->latest('id')->filter(request(['search']))->get()]);
     }
 
     //shows single post listing with comments
