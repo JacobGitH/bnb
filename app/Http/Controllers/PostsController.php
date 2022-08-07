@@ -12,7 +12,7 @@ class PostsController extends Controller
 {
     //shows home page
     public function index(Posts $posts){
-    return view('posts.index', ['posts' => $posts->latest('id')->filter(request(['search']))->get()]);
+        return view('posts.index', ['posts' => $posts->latest('id')->filter(request(['search']))->get()]);
     }
 
     //shows single post listing with comments
@@ -35,7 +35,8 @@ class PostsController extends Controller
             'price_for_day' => 'required',
             'price_for_servis' => 'nullable',
             'rules' => 'nullable',
-            'description' => 'nullable'
+            'description' => 'nullable',
+            'user_id' => 'required',
         ]);
 
         $postForID = Posts::create($form);
@@ -59,5 +60,47 @@ class PostsController extends Controller
         return redirect('/');
     }
 
+    
+    public function showUserPosts(Posts $posts){
+        $id = Auth::id();
+        return view('posts.showUserPosts', ['posts' => $posts->where('user_id', $id)->get()]);
+    }
+
+    public function createUsersPosts(Posts $posts){
+        return view('posts.editUsersPosts', ['post' => $posts]);
+    }
+
+    public function updateUsersPosts(Request $request, Posts $posts){
+        $form = $request->validate([
+            'title' => 'required',
+            'location' =>'required',
+            'contact' => 'required',
+            'price_for_day' => 'required',
+            'price_for_servis' => 'nullable',
+            'rules' => 'nullable',
+            'description' => 'nullable',
+        ]);
+
+        $posts->update($form);
+        
+        //checks if request has files and then stores them in public 
+        //images are linked through post_id
+        if($request->hasFile('images')){
+            //goes through all images in array
+            foreach($request->file('images') as $image){
+                //stores images path in storage into variable and saves post id into var
+                $path = $image->store('postImages', 'public');
+                $post_id = $posts->id;
+
+                Images::create([
+                    'path' => $path,
+                    'post_id' => $post_id,
+                ]);
+            } 
+        }
+
+        return back();
+    }
+    
     
 }

@@ -25,7 +25,7 @@ class BookingsController extends Controller
         //$booked = Bookings::betweenDates([$booked_at, $booked_to])->get();
         $booked = Bookings::query()->whereDate('booked', '>=', $booked_at)->whereDate('booked', '<=', $booked_to)->get();
         
-
+        //checks if dates are not already booked
         if(!$booked->isEmpty()){
             return redirect('/')->with('message', 'already booked');
         }

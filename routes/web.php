@@ -35,8 +35,19 @@ Route::get('/post/create', [PostsController::class, 'create'])->middleware('auth
 //stores form data
 Route::post('/post/store', [PostsController::class, 'store'])->middleware('auth');
 
+//shows users own postings
+Route::get('/post/user', [PostsController::class, 'showUserPosts'])->middleware('auth');
+
+//shows edit form for users post
+Route::get('/posts/user/edit/{posts}', [PostsController::class, 'createUsersPosts'])->middleware('auth');
+
+//
+Route::put('/posts/user/edit/{posts}', [PostsController::class, 'updateUsersPosts'])->middleware('auth');
+
 //shows single listing 
 Route::get('/post/{posts}', [PostsController::class, 'show']);
+
+
 
 //Comments
 //stores comment

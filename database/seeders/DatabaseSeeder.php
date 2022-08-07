@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             'price_for_day' => '150',
             'price_for_servis' => '120',
             'rules' => 'nebud kokot',
+            'user_id' => 1,
         ]);
 
        

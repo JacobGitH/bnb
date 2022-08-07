@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('price_for_day');
             $table->string('price_for_servis');
             $table->string('rules');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

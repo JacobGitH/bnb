@@ -50,6 +50,9 @@
                 <li class="nav-item">
                   <a class="nav-link a-cus" href="/post/create">Create post</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link a-cus" href="/post/user">Show my posts</a>
+                </li>
                 @endauth
               </ul>
               <form class="d-flex"action="/">

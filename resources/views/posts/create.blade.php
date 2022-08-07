@@ -1,6 +1,7 @@
 <x-layout>
     <form class="post-create-form" enctype="multipart/form-data" method="POST"  action="/post/store" >
       @csrf
+        <input type="hidden"  name="user_id" value="{{auth()->user()->id}}">
         <div class="form-group">
           <label>Post name</label>
           <input type="text" class="form-control" placeholder="Enter post name" name="title">

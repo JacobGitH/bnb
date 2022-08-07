@@ -148,6 +148,7 @@ footer{
     margin-top: 50px;
     margin-left: 30%;
     margin-right:25%;
+    margin-bottom: 80px;
     width: 40%;
     padding: 35px;
     border: 2px solid rgb(185, 176, 176);
@@ -208,6 +209,13 @@ footer{
 .form-input-width{
     max-width: 250px;
     margin-bottom: 15px;
+}
+
+.row{
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+    background-color: #0096FF;
+    border: 1px solid black;
 }
 
 

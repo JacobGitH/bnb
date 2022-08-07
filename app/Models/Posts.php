@@ -17,7 +17,8 @@ class Posts extends Model
         'price_for_servis',
         'rules',
         'created_at', 
-        'updated_at'
+        'updated_at',
+        'user_id',
     ];
 
 
