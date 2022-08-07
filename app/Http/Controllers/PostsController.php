@@ -102,5 +102,10 @@ class PostsController extends Controller
         return back();
     }
     
+    public function deleteUsersPosts(Posts $posts){
+        $posts->delete();
+
+        return redirect('/');
+    }
     
 }

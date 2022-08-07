@@ -44,6 +44,9 @@ Route::get('/posts/user/edit/{posts}', [PostsController::class, 'createUsersPost
 //
 Route::put('/posts/user/edit/{posts}', [PostsController::class, 'updateUsersPosts'])->middleware('auth');
 
+
+Route::delete('/posts/user/delete/{posts}', [PostsController::class, 'deleteUsersPosts'])->middleware('auth');
+
 //shows single listing 
 Route::get('/post/{posts}', [PostsController::class, 'show']);
 
