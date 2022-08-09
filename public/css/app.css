@@ -218,8 +218,17 @@ footer{
     border: 1px solid black;
 }
 
+.button-to-text{
+    color: rgb(0, 0, 0);
+    text-decoration: none; 
+    background-color: transparent;
+    border: none;
+    margin-left: 30px;
+}
 
-
+.button-to-text:hover{
+    color: #ffffff;
+}
 
 
 
