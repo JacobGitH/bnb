@@ -54,11 +54,11 @@ Route::get('/post/{posts}', [PostsController::class, 'show']);
 
 //Comments
 //stores comment
-Route::post('/comments/store', [CommentsController::class, 'store'])->middleware('auth');
+Route::post('/comments/store/{post}', [CommentsController::class, 'store'])->middleware('auth');
 
 //booking
 //stores booking
-Route::post('/booking/store', [BookingsController::class, 'store']);
+Route::post('/booking/store/{post}', [BookingsController::class, 'store']);
 
 
 

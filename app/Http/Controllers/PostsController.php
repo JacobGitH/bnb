@@ -18,7 +18,9 @@ class PostsController extends Controller
     //shows single post listing with comments
     public function show(Posts $posts){
         $comments = Comments::where('post_id', $posts->id)->get();
-        return view('posts.show', ['post' => $posts, 'comments' => $comments]);
+        $image = Images::where('post_id', $posts->id)->first();
+        //dd($image);
+        return view('posts.show', ['post' => $posts, 'comments' => $comments, 'image' => $image]);
     }
 
     //shows post form 
