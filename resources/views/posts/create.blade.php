@@ -27,6 +27,14 @@
             <input type="text" class="form-control" placeholder="rules" name="rules">
         </div>
         <div class="form-group">
+          <label>tags</label>
+          <input type="text" class="form-control" placeholder="tags" name="tags">
+        </div>
+        <div class="form-group">
+          <label>email</label>
+          <input type="eamil" class="form-control" placeholder="email" name="email">
+        </div>
+        <div class="form-group">
           <label >Description</label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
         </div>

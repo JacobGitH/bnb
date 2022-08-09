@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('location');
             $table->longText('description');
             $table->string('contact');
+            $table->string('email')->nullable();
             $table->string('price_for_day');
-            $table->string('price_for_servis');
-            $table->string('rules');
+            $table->string('price_for_servis')->nullable();
+            $table->string('rules')->nullable();
+            $table->string('tags')->nullable();
             $table->integer('user_id');
             $table->timestamps();
         });

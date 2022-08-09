@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             'price_for_servis' => '120',
             'rules' => 'nebud kokot',
             'user_id' => 1,
+            'tags' => 'lol, tghe, sada, '.$i,
         ]);
 
        

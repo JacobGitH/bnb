@@ -28,6 +28,14 @@
               <input type="text" class="form-control" value="{{$post->rules}}" name="rules">
           </div>
           <div class="form-group">
+            <label>tags</label>
+            <input type="text" class="form-control" value="{{$post->tags}}" name="tags">
+          </div>
+          <div class="form-group">
+            <label>email</label>
+            <input type="eamil" class="form-control" value="{{$post->email}}" name="email">
+          </div>
+          <div class="form-group">
             <label >Description</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{$post->description}}</textarea>
           </div>

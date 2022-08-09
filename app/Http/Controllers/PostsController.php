@@ -12,7 +12,8 @@ class PostsController extends Controller
 {
     //shows home page
     public function index(Posts $posts){
-        return view('posts.index', ['posts' => $posts->latest('id')->filter(request(['search']))->get()]);
+        $image = Images::where('post_id', $posts->id)->first();
+        return view('posts.index', ['posts' => $posts->latest('id')->filter(request(['search']))->get(), 'image' => $image]);
     }
 
     //shows single post listing with comments
@@ -38,10 +39,12 @@ class PostsController extends Controller
             'price_for_servis' => 'nullable',
             'rules' => 'nullable',
             'description' => 'nullable',
+            'tags' => 'nullable',
+            'email' => 'nullable',
             'user_id' => 'required',
         ]);
-
-        $postForID = Posts::create($form);
+        
+        dd($postForID = Posts::create($form));
         
         //checks if request has files and then stores them in public 
         //images are linked through post_id
@@ -80,6 +83,8 @@ class PostsController extends Controller
             'price_for_day' => 'required',
             'price_for_servis' => 'nullable',
             'rules' => 'nullable',
+            'tags' => 'nullable',
+            'email' => 'nullable',
             'description' => 'nullable',
         ]);
 

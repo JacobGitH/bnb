@@ -1,11 +1,11 @@
 <x-layout>
     <div class="container">
         @foreach ($posts as $post)
-        <div class="row">
+        <div class="row col-user">
             <div class="col-md-8">
                 {{$post->title}}
             </div>
-            <div class="col-md-2 col-user">
+            <div class="col-md-2 ">
               <a href="/posts/user/edit/{{$post->id}}" class="button-to-text"><i class="fa-solid fa-pencil "></i>Edit</a> 
             </div>
             <div class="col-md-2">
