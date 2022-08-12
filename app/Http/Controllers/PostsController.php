@@ -115,19 +115,5 @@ class PostsController extends Controller
 
         return back();
     }
-
-    public function showBookings(){
-        $bookingsAll = Bookings::where('user_id', Auth::id())->get();
-        $bookingsArr = [];
-        foreach($bookingsAll as $bookings){
-            $bookingsArr[$bookings->post_id][] = $bookings->booked;
-        }
-
-        return view('posts.showBookings', ['bookings' => $bookingsArr]);
-    }
-
-    public function showBookingsOfPost(Posts $post){
-
-    }
-    
+   
 }

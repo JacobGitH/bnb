@@ -38,11 +38,7 @@ Route::post('/post/store', [PostsController::class, 'store'])->middleware('auth'
 //shows users own postings
 Route::get('/post/user', [PostsController::class, 'showUserPosts'])->middleware('auth');
 
-//shows users bookings
-Route::get('/user/bookings', [PostsController::class, 'showBookings'])->middleware('auth');
 
-//shows users bookings
-Route::get('//posts/user/bookings/{post}', [PostsController::class, 'showBookingsOfPost'])->middleware('auth');
 
 //shows edit form for users post
 Route::get('/posts/user/edit/{posts}', [PostsController::class, 'createUsersPosts'])->middleware('auth');
@@ -63,6 +59,12 @@ Route::get('/post/{posts}', [PostsController::class, 'show']);
 Route::post('/comments/store/{post}', [CommentsController::class, 'store'])->middleware('auth');
 
 //booking
+//shows users bookings
+Route::get('/posts/user/bookings/{post}', [BookingsController::class, 'showAllBookingsOfPost'])->middleware('auth');
+
+//shows users bookings
+Route::get('/user/bookings', [BookingsController::class, 'showBookings'])->middleware('auth');
+
 //stores booking
 Route::post('/booking/store/{post}', [BookingsController::class, 'store'])->middleware('auth');
 

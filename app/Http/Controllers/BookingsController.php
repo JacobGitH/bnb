@@ -6,9 +6,11 @@ use Carbon\Carbon;
 use App\Models\Posts;
 use App\Models\Bookings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingsController extends Controller
 {
+    //stores bookings of one user
     public function store(Request $request, Posts $post){
         $form = $request->validate([
             'booked_at' => 'required',
@@ -39,4 +41,21 @@ class BookingsController extends Controller
 
         return redirect('/');
     }
+
+    public function showBookings(){
+        $bookingsAll = Bookings::where('user_id', Auth::id())->get();
+        $bookingsArr = [];
+        foreach($bookingsAll as $bookings){
+            $bookingsArr[$bookings->post_id][] = $bookings->booked;
+        }
+
+        return view('posts.showBookings', ['bookings' => $bookingsArr]);
+    }
+
+    public function showAllBookingsOfPost(Posts $post){
+        $bookings = Bookings::where('post_id', $post->id)->get();
+        return view('posts.showBookingsOfMyPosts', [ 'post'=> $post, 'bookings' => $bookings]);
+    } 
+
+
 }

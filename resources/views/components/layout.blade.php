@@ -49,6 +49,9 @@
                   <li class="nav-item">
                     <a class="nav-link a-cus" href="/user/bookings">Show my bookings</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link a-cus" href="/posts/user/bookings">Show bookings of my posts</a>
+                  </li>
                   @else
                   </li>
                   <li class="nav-item">
