@@ -22,7 +22,7 @@ class BookingsController extends Controller
 
         //betweenDates is scopefilter in bookings model **not working for some reason
         //$booked = Bookings::betweenDates([$booked_at, $booked_to])->get();
-        $booked = Bookings::query()->whereDate('booked', '>=', $booked_at)->whereDate('booked', '<=', $booked_to)->get();
+        $booked = Bookings::query()->whereDate('booked', '>=', $booked_at)->whereDate('booked', '<=', $booked_to)->where('post_id', $post->id)->get();
         
         //checks if dates are not already booked
         if(!$booked->isEmpty()){

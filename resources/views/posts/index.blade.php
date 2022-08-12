@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container">
+    <div class="container index-cintainer">
         <div class="row gx-5">
             @foreach ($posts as $post)
                 <div class="col-lg-6 index-card">

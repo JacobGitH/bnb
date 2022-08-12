@@ -24,6 +24,11 @@ nav{
     box-shadow: 0 8px 16px -1px black;
 }
 
+.index-container{
+    background-color: #2b2b30;
+    border-radius: 10px;
+}
+
 .nav-item:last-child{
     margin-bottom: 25px;
 }
@@ -68,8 +73,8 @@ nav{
 }
 
 .btn{
-    background-color: #0096FF !important;
-    border: #0096FF !important;
+    background-color: rgb(32, 31, 36) !important;
+    border: rgb(32, 31, 36) !important;
 }
 
 .btn:hover{
@@ -94,6 +99,8 @@ footer{
 .container{
     margin-top: 10px !important;
     margin-bottom: 10px;
+    background-color: #2b2b30;
+    border-radius: 10px;
 }
 
 .index-card{
@@ -115,6 +122,7 @@ footer{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 15px;
 }
 
 .index-post-title{
@@ -196,6 +204,8 @@ footer{
     grid-template-rows: repeat(12, 1fr);
     grid-auto-rows: minmax(25px, auto);
     margin-bottom: 55px;
+    background-color: #2b2b30;
+    border-radius: 10px;
 }
 
 .show-image-div{
@@ -212,7 +222,6 @@ footer{
 .show-info{
     grid-column: 6/9;
     grid-row: 1/7;
-    background-color: red;
 }
 
 
@@ -229,35 +238,31 @@ footer{
 .show-title{
     grid-column: 1;
     grid-row: 1;
-    background-color: rgb(64, 180, 171);
     padding: 15px;
-    padding-left: 35px;
+    padding-left: 15px;
     font-size: xx-large;
     font-weight: 600;
 }
 .show-location{
     grid-column: 1;
     grid-row: 2;
-    background-color: rgb(0, 0, 0);
     padding: 15px;
-    padding-left: 35px;
+    padding-left: 15px;
     font-size: large;
 }
 .show-price{
     grid-column: 1;
     grid-row: 3;
-    background-color: rgb(172, 48, 141);
     padding: 15px;
-    padding-left: 35px;
+    padding-left: 15px;
     font-size: large;
 }
 
 .show-contact{
     grid-column: 1;
     grid-row: 4;
-    background-color: rgb(99, 70, 91);
     padding: 15px;
-    padding-left: 35px;
+    padding-left: 15px;
     font-size: large;
 }
 
@@ -265,7 +270,6 @@ footer{
 .show-description-info{
     grid-column: 1/9;
     grid-row: 7/13;
-    background-color: green;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(16, 1fr);
@@ -276,15 +280,13 @@ footer{
 .show-description{
     grid-column: 1;
     grid-row: 1/13;
-    background-color: rgb(99, 70, 91);
     padding: 15px;
-    padding-left: 35px;
+    padding-left: 15px;
 }
 
 .show-rules{
     grid-column: 1;
     grid-row: 13/14;
-    background-color: rgb(230, 3, 165);
     padding: 15px;
     padding-left: 35px;
 }
@@ -292,7 +294,6 @@ footer{
 .show-tags{
     grid-column: 1;
     grid-row: 14/17;
-    background-color: rgb(49, 56, 151);
     padding: 15px;
     padding-left: 35px;
 }
@@ -300,16 +301,20 @@ footer{
 .show-comment-wrapper{
     width: 100%;
     height: 250px;
+    background-color: #2b2b30;
+    border-radius: 10px;
 }
 
 .booking{
     width: 100%;
     height: 350px;
     padding: 25px;
+    background-color: #2b2b30;
+    border-radius: 10px;
 }
 
 .comment-textarea{
- background-color: black;
+ background-color: rgb(32, 31, 36);
  outline: none;
  border-style: none; 
  border-bottom: 2px solid rgb(68, 63, 63);
@@ -317,7 +322,7 @@ footer{
 }
 
 .comment-textarea:focus{
-    background-color: black;
+    background-color: rgb(32, 31, 36);
     color: white;
     outline: none;
     border-style: none; 
@@ -326,8 +331,8 @@ footer{
 
 
 .form-input-width{
-    background-color: black;
-    border: 1px solid black;
+    background-color: rgb(32, 31, 36);
+    border: 1px solid rgb(32, 31, 36);
     color: white;
     max-width: 250px;
     margin-bottom: 15px;
@@ -337,8 +342,8 @@ footer{
 .form-input-width:focus{
     color-scheme: white;
     color: white;
-    background-color: black;
-    border: 1px solid black;
+    background-color: rgb(32, 31, 36);
+    border: 1px solid rgb(32, 31, 36);
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -370,7 +375,7 @@ footer{
 
 .comment-user-name{
     color: white;
-    font-size: x-large;
+    font-size: large;
     margin-bottom: 15px;
     width: 1200px;
     text-overflow: ellipsis;
@@ -383,11 +388,13 @@ footer{
     text-overflow: ellipsis;
 }
 
-.commnets-disply{
+.comments-display{
     border-bottom: 2px solid rgb(68, 63, 63);
     margin-bottom: 20px;
-    width: 1200px;
     text-overflow: clip;
+    background-color: #2b2b30;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 

@@ -39,4 +39,8 @@ class Posts extends Model
     public function comments(){
         return $this->hasMany(Comments::class, 'post_id');
     }
+
+    public function bookings(){
+        return $this->hasMany(Bookings::class, 'post_id');
+    }
 }

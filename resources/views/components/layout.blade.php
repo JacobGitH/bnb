@@ -39,24 +39,25 @@
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
                   <a class="nav-link active a-cus" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link a-cus" href="/register">Register</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link a-cus" href="/login">Login</a>
-                </li>
-                @auth
-                <li class="nav-item">
-                  <a class="nav-link a-cus" href="/post/create">Create post</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link a-cus" href="/post/user">Show my posts</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link a-cus" href="/post/user">Show my bookings</a>
-                </li>
-                @endauth
+                  @auth
+                  <li class="nav-item">
+                    <a class="nav-link a-cus" href="/post/create">Create post</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link a-cus" href="/post/user">Show my posts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link a-cus" href="/user/bookings">Show my bookings</a>
+                  </li>
+                  @else
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link a-cus" href="/register">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link a-cus" href="/login">Login</a>
+                  </li>
+                  @endauth
               </ul>
               <form class="d-flex"action="/">
                 <input class="form-control me-2" type="text" placeholder="Search" name="search">

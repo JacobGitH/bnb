@@ -18,7 +18,7 @@
     
     
     @foreach ($comments as $comment)
-    <div class="commnets-disply">
+    <div class="comments-display">
         <div class="comment-user-name">{{$comment->user_name}}:</div>
         <div class="comment-user-comment">{{$comment->comment}}</div>
     </div>

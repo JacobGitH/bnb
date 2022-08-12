@@ -38,6 +38,12 @@ Route::post('/post/store', [PostsController::class, 'store'])->middleware('auth'
 //shows users own postings
 Route::get('/post/user', [PostsController::class, 'showUserPosts'])->middleware('auth');
 
+//shows users bookings
+Route::get('/user/bookings', [PostsController::class, 'showBookings'])->middleware('auth');
+
+//shows users bookings
+Route::get('//posts/user/bookings/{post}', [PostsController::class, 'showBookingsOfPost'])->middleware('auth');
+
 //shows edit form for users post
 Route::get('/posts/user/edit/{posts}', [PostsController::class, 'createUsersPosts'])->middleware('auth');
 
