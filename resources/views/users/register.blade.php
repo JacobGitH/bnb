@@ -5,7 +5,7 @@
         <div class="mb-3">
           <label class="form-label">Name</label>
           <input type="text" class="form-control" name="name">
-          @error('email')
+          @error('name')
               <p class="error-message">{{$message}}</p>
           @enderror
         </div>

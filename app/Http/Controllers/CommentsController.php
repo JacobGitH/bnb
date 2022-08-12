@@ -17,7 +17,7 @@ class CommentsController extends Controller
         }
 
         $form = $request->validate([
-            'comment' => 'required',
+            'comment' => 'required|max:250',
         ]);
 
         Comments::create([            

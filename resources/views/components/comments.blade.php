@@ -1,11 +1,11 @@
 <div class="container">
     @auth
-    <div class="show-commment-wrapper">
+    <div class="show-comment-wrapper">
         <form class="form-def" method="POST" action="/comments/store/{{$post->id}}">
             @csrf
             <div class="form-group">
-              <label class="form-label">Comments</label>
-              <textarea class="form-control" rows="3" name="comment"></textarea>
+              <label class="form-label">Add your comments</label>
+              <textarea class="form-control comment-textarea" rows="3" name="comment" placeholder="add your comments..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-mar" name="submit">Submit</button>
         </form>   
@@ -16,12 +16,14 @@
 
     
     
+    
+    @foreach ($comments as $comment)
     <div class="commnets-disply">
-        @foreach ($comments as $comment)
-        <p>{{$comment->user_name}}</p><br>
-        <p>{{$comment->comment}}</p><br>
-        @endforeach
+        <div class="comment-user-name">{{$comment->user_name}}:</div>
+        <div class="comment-user-comment">{{$comment->comment}}</div>
     </div>
+    @endforeach
+    
 
 </div>
     

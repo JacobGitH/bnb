@@ -3,7 +3,7 @@
         @foreach ($posts as $post)
         <div class="row col-user">
             <div class="col-md-8">
-                {{$post->title}}
+                <a href="/post/{{$post->id}}">{{$post->title}}</a>
             </div>
             <div class="col-md-2 ">
               <a href="/posts/user/edit/{{$post->id}}" class="button-to-text"><i class="fa-solid fa-pencil "></i>Edit</a> 

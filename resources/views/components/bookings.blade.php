@@ -1,6 +1,6 @@
 <div class="container">
     @auth
-        
+        <h2>You can book your date of stay</h2>
     <form class="booking" method="POST" action="/booking/store/{{$post->id}}">
         @csrf
             <div class="form-group">

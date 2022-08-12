@@ -58,7 +58,7 @@ Route::post('/comments/store/{post}', [CommentsController::class, 'store'])->mid
 
 //booking
 //stores booking
-Route::post('/booking/store/{post}', [BookingsController::class, 'store']);
+Route::post('/booking/store/{post}', [BookingsController::class, 'store'])->middleware('auth');
 
 
 

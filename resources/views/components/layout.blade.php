@@ -41,10 +41,10 @@
                   <a class="nav-link active a-cus" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link a-cus" href="#">Link</a>
+                  <a class="nav-link a-cus" href="/register">Register</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link a-cus" href="#">Link</a>
+                  <a class="nav-link a-cus" href="/login">Login</a>
                 </li>
                 @auth
                 <li class="nav-item">
@@ -52,6 +52,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link a-cus" href="/post/user">Show my posts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link a-cus" href="/post/user">Show my bookings</a>
                 </li>
                 @endauth
               </ul>

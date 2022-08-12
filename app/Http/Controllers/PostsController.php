@@ -32,7 +32,7 @@ class PostsController extends Controller
     //stores post
     public function store(Request $request){
         $form = $request->validate([
-            'title' => 'required',
+            'title' => ['required', 'min:3', 'max:32'],
             'location' =>'required',
             'contact' => 'required',
             'price_for_day' => 'required',
@@ -44,7 +44,7 @@ class PostsController extends Controller
             'user_id' => 'required',
         ]);
         
-        dd($postForID = Posts::create($form));
+        $postForID = Posts::create($form);
         
         //checks if request has files and then stores them in public 
         //images are linked through post_id
@@ -112,7 +112,7 @@ class PostsController extends Controller
     public function deleteUsersPosts(Posts $posts){
         $posts->delete();
 
-        return redirect('/');
+        return back();
     }
     
 }

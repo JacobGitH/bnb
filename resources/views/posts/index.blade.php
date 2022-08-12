@@ -9,7 +9,7 @@
                         </a>
                     </div>
                     <div class="index-post-title"><a href="/post/{{$post->id}}">{{$post->title}}</a></div>
-                    <div class="index-post-price"><a href="/post/{{$post->id}}">{{$post->price_for_day}} -Kč</a></div>
+                    <div class="index-post-price"><a href="/post/{{$post->id}}">Price for day: {{$post->price_for_day}} -Kč</a></div>
                     <div class="index-post-location"><a href="/post/{{$post->id}}">Lokace: {{$post->location}}</a></div>
                 </div>
             @endforeach
