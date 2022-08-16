@@ -16,7 +16,7 @@ class Bookings extends Model
         return $query()->whereDate('booked', '>=', $filters[0])->whereDate('booked', '<=', $filters[1]);
     }
     */
-
+    
     public function post(){
         return $this->belongsTo(Posts::class, 'post_id');
     }

@@ -31,6 +31,7 @@ class BookingsController extends Controller
             return redirect('/')->with('message', 'already booked');
         }
 
+        //books all dates
         for ($i=0; $i <= $diff['days']; $i++) { 
             Bookings::create([
                 'post_id' => $post->id,
@@ -42,15 +43,18 @@ class BookingsController extends Controller
         return redirect('/');
     }
 
+
     public function showBookings(){
         $bookingsAll = Bookings::where('user_id', Auth::id())->get();
         $bookingsArr = [];
+        //pushes bookings to associative array
         foreach($bookingsAll as $bookings){
             $bookingsArr[$bookings->post_id][] = $bookings->booked;
         }
 
         return view('posts.showBookings', ['bookings' => $bookingsArr]);
     }
+
 
     public function showAllBookingsOfPost(Posts $post){
         $bookings = Bookings::where('post_id', $post->id)->get();
